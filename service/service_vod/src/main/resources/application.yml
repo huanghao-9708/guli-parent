@@ -1,0 +1,43 @@
+#服务端口
+server:
+  port: 8003
+spring:
+#  服务名
+  application:
+    name: service-vod
+#  环境设置：dev（development 开发）、test（测试）、prod（product 正式）
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+#      最大的上传文件大小
+      max-file-size: 1024MB
+#      最大的请求头的大小
+      max-request-size: 1024MB
+  cloud:
+    nacos:
+      discovery:
+#        微服务注册时需要配置的nacos服务器地址
+        server-addr: localhost:8848
+#阿里oss相关的常量值
+aliyun:
+  vod:
+    file:
+      #        访问的key
+      keyId: LTAI4G6yjwJ9tMqmehmh8ss5
+      #        访问的密码
+      keySecret: CyERne8oxvMXbONfTqY5VGUr2ZdA5p
+#数据源配置
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/guli?serverTimezone=GMT%2B8
+#    username: root
+#    password: 19970508
+#日志全局格式配置
+#  jackson:
+#    date-format: yy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+#mybtais日志
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

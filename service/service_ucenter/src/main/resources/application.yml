@@ -1,0 +1,50 @@
+#服务端口
+server:
+  port: 8150
+spring:
+#  服务名
+  application:
+    name: service-ucenter
+#  环境设置：dev（development 开发）、test（测试）、prod（product 正式）
+  profiles:
+    active: dev
+#数据源配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/guli?serverTimezone=GMT%2B8
+    username: root
+    password: 19970508
+#json解析器的日期格式配置
+  jackson:
+    date-format: yy-MM-dd HH:mm:ss
+    time-zone: GMT+8//设置时区为东八区
+  cloud:
+    nacos:
+      discovery:
+        #        微服务注册时需要配置的nacos服务器地址
+        server-addr: localhost:8848
+#        enabled: false
+  redis:
+    host: 192.168.111.129
+    port: 6379
+    database: 0
+    timeout: 180000
+    lettuce:
+      pool:
+        max-active: 20
+#        最大阻塞事件（负数没有限制）
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+mybatis-plus:
+  mapper-locations: classpath:com/hao/ucenter/mapper/xml/*.xml
+##mybtais日志
+#mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#微信开放平台的相关配置
+wx:
+  open:
+    app_id: wxed9954c01bb89b47
+    app_secret: a7482517235173ddb4083788de60b90e
+    redirect_url: http://guli.shop/api/ucenter/wx/callback

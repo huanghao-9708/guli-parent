@@ -1,0 +1,43 @@
+#服务端口
+server:
+  port: 8005
+spring:
+  #  服务名
+  application:
+    name: service-msm
+  #  环境设置：dev（development 开发）、test（测试）、prod（product 正式）
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        #        微服务注册时需要配置的nacos服务器地址
+        server-addr: localhost:8848
+#        不启用nacos
+#        enabled: false
+#  redis相关配置
+  redis:
+    host: 192.168.111.129
+    port: 6379
+    database: 0
+    timeout: 180000
+    lettuce:
+      pool:
+        max-active: 20
+        #        最大阻塞事件（负数没有限制）
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+#阿里msm相关的常量值
+aliyun:
+  msm:
+    file:
+      #        访问的key
+      keyId: LTAI4FvvVEWiTJ3GNJJqJnk7
+      #        访问的密码
+      keySecret: 9st82dv7EvFk9mTjYO1XXbM632fRbG
+#      阿里云短信签名名称
+      signName: 我的完美在线教育网站
+#      阿里云短信模板code
+      templateCode: SMS_208895139
+

@@ -1,0 +1,21 @@
+#微服务的相关配置
+spring:
+  profiles:
+#    设置为开发环境环境
+    active: dev
+  application:
+#    服务名
+    name: service-statistics
+  cloud:
+    nacos:
+      config:
+#        nacos config的地址
+        server-addr: 127.0.0.1:8848
+#        设置nacos配置文件的文件格式
+        file-extension: yaml
+#        nacos空间名
+        namespace: 97a9aaa5-d2c8-44d2-a64a-a26ed4b914c1
+#        子配置文件
+        ext-config:
+          - data-id: jdbc.yaml
+            refresh: true

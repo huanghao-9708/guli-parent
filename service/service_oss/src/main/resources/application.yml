@@ -1,0 +1,25 @@
+#设置端口号
+server:
+  port: 8002
+
+spring:
+  application:
+#  设置应用名
+    name: service-oss
+#开发环境设置
+  profiles:
+    active: dev
+
+#阿里oss相关的常量值
+aliyun:
+  oss:
+    file:
+#      服务器地址
+      endPoint: oss-cn-guangzhou.aliyuncs.com
+#        访问的key
+      keyId: LTAI4G6yjwJ9tMqmehmh8ss5
+#        访问的密码
+      keySecret: CyERne8oxvMXbONfTqY5VGUr2ZdA5p
+#        bucket的名称
+      bucketName: guli-2020-12
+
